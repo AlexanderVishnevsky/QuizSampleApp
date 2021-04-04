@@ -1,0 +1,2 @@
+# QuizSampleApp
+the app will show one question at a time and two navigation buttons:  next + prev.  * The prev. button will be disable on the first question. * The next button will be replaced with ‘done’ button on the last question. * The ‘done’ button should calculate the user’s grade (0-100). * Each question will have a single answer. * On prev. / next navigation the answered questions should keep the state. * the number of questions and answers will be represented by a data object

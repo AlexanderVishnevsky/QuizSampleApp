@@ -3,13 +3,8 @@
   <h1>QuizSampleApp</h1>
 </div>
 
-<div align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538035-e6aa4c80-95e2-11eb-8e07-fa83096aa4bc.png" alt="1">
-  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538044-eca02d80-95e2-11eb-90af-77933920a86c.png" alt="2">
-  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538059-f32ea500-95e2-11eb-9510-8d59bbd7020b.png" alt="3">
-  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538067-f6c22c00-95e2-11eb-9a15-eedb301f6832.png" alt="4">
-</div>
-
+## Live demo 🎮
+You can see live demo [here](https://codesandbox.io/s/quizsampleapp-79btz) 
 
 <div align="left">
 
@@ -21,3 +16,13 @@
  - Each question will have a single answer. 
  - On prev. / next navigation the answered questions should keep the state. 
  - The number of questions and answers will be represented by a data object
+</div>
+
+## Screenshots 🎴
+
+<div align="center">
+  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538035-e6aa4c80-95e2-11eb-8e07-fa83096aa4bc.png" alt="1">
+  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538044-eca02d80-95e2-11eb-90af-77933920a86c.png" alt="2">
+  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538059-f32ea500-95e2-11eb-9510-8d59bbd7020b.png" alt="3">
+  <img width="400" src="https://user-images.githubusercontent.com/26820006/113538067-f6c22c00-95e2-11eb-9a15-eedb301f6832.png" alt="4">
+</div>

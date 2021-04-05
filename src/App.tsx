@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import { useStyles } from './styles/AppStyle';
 import Layout from './components/Common/Layout';
 import Question from './components/QuestionPage/Question';
@@ -7,11 +6,16 @@ import { AppPages } from './interfaces/AppPages';
 import StartPage from './components/StartPage/StartPage';
 import ResultPage from './components/ResultPage/ResultPage';
 
+/**
+ * Root component
+ * @constructor
+ */
 const App = (): JSX.Element => {
     const classes = useStyles();
-    const [page, setPage] = useState<AppPages>('start');
-    const [result, setResult] = useState(0);
+    const [page, setPage] = React.useState<AppPages>('start'); // Fake pagination. Don't need real for certain case
+    const [result, setResult] = React.useState(0); // Overall result of quiz
 
+    // Pagination
     const handleChangePage = (page: AppPages) => {
         setPage(page);
     };

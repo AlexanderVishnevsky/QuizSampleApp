@@ -7,7 +7,14 @@ import { AppPages } from '../../interfaces/AppPages';
 import Preloader from '../Common/Preloader';
 import { BasicTypes } from '../../interfaces/BasicTypes';
 import { useStyles } from '../../styles/Question/QuestionStyle';
+import { QuestionsStateType } from '../../interfaces/QuestionsStateType';
 
+/**
+ * Page with quiz
+ * @param handleChangePage
+ * @param setResult
+ * @constructor
+ */
 const Question = ({
     handleChangePage,
     setResult,
@@ -16,16 +23,15 @@ const Question = ({
     setResult: React.Dispatch<React.SetStateAction<number>>;
 }): JSX.Element => {
     const classes = useStyles();
-    const [activeQuestion, setActiveQuestion] = React.useState(0);
+    const [activeQuestion, setActiveQuestion] = React.useState(0); // Current active question
 
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(true); // State for loader
 
-    const [questionsState, setQuestionsState] = React.useState<
-        Array<{ id: number; value: BasicTypes; isAnswerCorrect: boolean }> | ''
-    >('');
+    const [questionsState, setQuestionsState] = React.useState<QuestionsStateType>(''); // Whole answers state
 
     const timer = React.useRef<number>();
 
+    // Simulating DB delay
     React.useEffect(() => {
         if (loading) {
             setLoading(true);
@@ -35,9 +41,11 @@ const Question = ({
         }
     }, []);
 
+    // Simulating querying Data from external resource
     React.useEffect(() => {
         try {
             if (QuestionData instanceof Array) {
+                // Dynamic Array fill
                 const newArray = new Array(QuestionData.length)
                     .fill({ id: 0, value: '' })
                     .map((value, idx) => ({ ...value, id: idx }));
@@ -49,8 +57,8 @@ const Question = ({
         }
     }, []);
 
+    // Switch to next question
     const handleNext = () => {
-        debugger;
         if (!loading && questionsState instanceof Array && questionsState[activeQuestion + 1].value === '') {
             setLoading(true);
             timer.current = window.setTimeout(() => {
@@ -60,20 +68,23 @@ const Question = ({
         setActiveQuestion((prevActiveQuestion) => prevActiveQuestion + 1);
     };
 
+    // Move back to previous question
     const handleBack = () => {
         setActiveQuestion((prevActiveQuestion) => prevActiveQuestion - 1);
     };
 
+    // Write chosen answer to the state
     const handleChoseAnswer = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (questionsState instanceof Array) {
-            const temp = [...questionsState];
+            const data = [...questionsState];
+            // Check if the answer is correct
             const isCorrect = (event.target as HTMLInputElement).value === QuestionData[activeQuestion].correctAnswer;
-            temp[activeQuestion] = {
-                ...temp[activeQuestion],
+            data[activeQuestion] = {
+                ...data[activeQuestion],
                 value: (event.target as HTMLInputElement).value,
                 isAnswerCorrect: isCorrect,
             };
-            setQuestionsState(temp);
+            setQuestionsState(data);
         }
     };
 

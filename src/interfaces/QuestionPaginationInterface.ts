@@ -1,6 +1,6 @@
 import { AppPages } from './AppPages';
-import { BasicTypes } from './BasicTypes';
 import React from 'react';
+import { QuestionsStateType } from './QuestionsStateType';
 
 export interface QuestionPaginationInterface {
     steps: number;
@@ -8,6 +8,6 @@ export interface QuestionPaginationInterface {
     handleChangePage: (page: AppPages) => void;
     handleNext: () => void;
     handleBack: () => void;
-    questionsState: { id: number; value: BasicTypes; isAnswerCorrect: boolean }[] | '';
+    questionsState: QuestionsStateType;
     setResult: React.Dispatch<React.SetStateAction<number>>;
 }

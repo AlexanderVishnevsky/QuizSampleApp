@@ -13,5 +13,5 @@ export const QuestionData: Array<QuestionDataInterface> = [
         answers: ['Chinese', 'English', 'Spanish', 'Russian'],
         correctAnswer: 'Chinese',
     },
-    { id: 3, questionTitle: '3', answers: ['3', '4'], correctAnswer: '3' },
+    { id: 3, questionTitle: 'Day would be', answers: ['Perfect'], correctAnswer: 'Perfect' },
 ];

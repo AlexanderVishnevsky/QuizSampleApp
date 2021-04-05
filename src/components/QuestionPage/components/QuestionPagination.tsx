@@ -16,6 +16,7 @@ const QuestionPagination = ({
     const classes = useStyles();
     const theme = useTheme();
 
+    // Count overall score
     const finishQuiz = () => {
         let a = 0;
         if (questionsState instanceof Array) {
@@ -23,6 +24,7 @@ const QuestionPagination = ({
             setResult(Math.round((a * 100) / steps));
         }
 
+        // Move to result page
         handleChangePage('result');
     };
 

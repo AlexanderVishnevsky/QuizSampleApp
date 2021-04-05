@@ -2,6 +2,11 @@ import { Button, Typography } from '@material-ui/core';
 import { PlayArrowOutlined } from '@material-ui/icons';
 import { AppPages } from '../../interfaces/AppPages';
 
+/**
+ * Стартовая страница для начала викторины
+ * @param handleChangePage
+ * @constructor
+ */
 const StartPage = ({ handleChangePage }: { handleChangePage: (page: AppPages) => void }): JSX.Element => {
     return (
         <>

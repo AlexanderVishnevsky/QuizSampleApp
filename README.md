@@ -11,7 +11,7 @@
 </div>
 
 
-<div align="left
+<div align="left">
 
 ## Task 📃
  - The app will show one question at a time and two navigation buttons:  next + prev.  

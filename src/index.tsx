@@ -7,11 +7,11 @@ import App from './App';
 import theme from './theme';
 
 ReactDOM.render(
-  <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
-  </StyledEngineProvider>,
-  document.querySelector('#root'),
+    <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <App />
+        </ThemeProvider>
+    </StyledEngineProvider>,
+    document.querySelector('#root'),
 );

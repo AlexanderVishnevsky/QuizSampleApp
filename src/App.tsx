@@ -1,16 +1,30 @@
 import * as React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import { useState } from 'react';
+import { useStyles } from './styles/AppStyle';
+import Layout from './components/Common/Layout';
+import Question from './components/QuestionPage/Question';
+import { AppPages } from './interfaces/AppPages';
+import StartPage from './components/StartPage/StartPage';
+import ResultPage from './components/ResultPage/ResultPage';
 
-export default function App() {
-  return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          TypeScript sample
-        </Typography>
-      </Box>
-    </Container>
-  );
-}
+const App = (): JSX.Element => {
+    const classes = useStyles();
+    const [page, setPage] = useState<AppPages>('start');
+    const [result, setResult] = useState(0);
+
+    const handleChangePage = (page: AppPages) => {
+        setPage(page);
+    };
+
+    return (
+        <div className={classes.layout}>
+            <Layout>
+                {page === 'start' && <StartPage handleChangePage={handleChangePage} />}
+                {page === 'quiz' && <Question handleChangePage={handleChangePage} setResult={setResult} />}
+                {page === 'result' && <ResultPage handleChangePage={handleChangePage} result={result} />}
+            </Layout>
+        </div>
+    );
+};
+
+export default App;
